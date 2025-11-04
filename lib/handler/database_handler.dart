@@ -1,5 +1,4 @@
 import 'package:app_control_gastos_personales/model/gasto_model.dart';
-import 'package:flutter/foundation.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
