@@ -60,5 +60,12 @@ class DatabaseHandler {
     return List.generate(maps.length, (i)=> GastoModel.fromMap(maps[i]),);
   }
 
-  
+  Future<int> actualizarGasto(GastoModel gasto) async{
+    final db = await database;
+    return await db.update("gastos", gasto.toMap(),where: "id = ?", whereArgs: [gasto.id],);
+  }
+  Future<int> eliminarGasto(int id) async{
+    final db = await database;
+    return await db.delete("gastos",where: "id = ?", whereArgs: [id],);
+  }
 }
